@@ -1,0 +1,12 @@
+# Code Owners
+
+## Default owner for application and project files
+
+* @Arid-Nova/developers
+
+## Governance and security files require administrator review
+
+.github/ @Arid-Nova/admins
+CODEOWNERS @Arid-Nova/admins
+SECURITY.md @Arid-Nova/admins
+LICENSE @Arid-Nova/admins
