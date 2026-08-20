@@ -1,0 +1,4 @@
+{
+    "name": "MVP Gateway Dev Container",
+    "image": "mcr.microsoft.com/devcontainers/java:dev-25-trixie"
+}
