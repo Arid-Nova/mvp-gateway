@@ -6,7 +6,7 @@
 
 ## Governance and security files require administrator review
 
-.github/ @Arid-Nova/admins
-CODEOWNERS @Arid-Nova/admins
-SECURITY.md @Arid-Nova/admins
-LICENSE @Arid-Nova/admins
+/.github/ @Arid-Nova/admins
+/CODEOWNERS @Arid-Nova/admins
+/SECURITY.md @Arid-Nova/admins
+/LICENSE @Arid-Nova/admins
