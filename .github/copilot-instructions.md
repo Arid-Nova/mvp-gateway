@@ -2,7 +2,8 @@
 
 ## Repository status
 
-- This repository is currently an initial scaffold. The tracked project files are `README.md`, `.gitignore`, and `LICENSE`.
+- This repository is currently an initial scaffold. It includes governance and
+  contributor files alongside `README.md`, `.gitignore`, and `LICENSE`.
 - No application source, dependency manifest, or build, test, or lint command is defined yet.
 - Preserve the existing Java-oriented ignore rules in `.gitignore` unless the project technology changes.
 
