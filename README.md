@@ -1,7 +1,5 @@
 # MVP Gateway
 
-__This is a 
-
 This repository is a reusable baseline template for creating new repositories with consistent governance, security, and collaboration standards.
 
 ## Included Baseline Artifacts
