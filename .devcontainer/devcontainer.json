@@ -14,7 +14,9 @@
   "customizations": {
     "vscode": {
       "settings": {
-        "java.import.gradle.java.home": "/usr/lib/jvm/msopenjdk-current"
+        "java.import.gradle.java.home": "/usr/lib/jvm/msopenjdk-current",
+        "java.compile.nullAnalysis.mode": "automatic",
+        "java.configuration.updateBuildConfiguration": "automatic"
       },
       "extensions": [
         "redhat.java",
