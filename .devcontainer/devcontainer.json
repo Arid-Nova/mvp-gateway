@@ -1,0 +1,40 @@
+{
+  "name": "MVP Gateway Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/java:dev-25-trixie",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "none",
+      "installGradle": "true",
+      "installGroovy": "true"
+    },
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "moby": "false"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "java.import.gradle.java.home": "/usr/lib/jvm/msopenjdk-current",
+        "java.compile.nullAnalysis.mode": "automatic",
+        "java.configuration.updateBuildConfiguration": "automatic"
+      },
+      "extensions": [
+        "redhat.java",
+        "vscjava.vscode-java-debug",
+        "vscjava.vscode-java-test",
+        "vscjava.vscode-java-dependency",
+        "vscjava.vscode-gradle",
+        "vmware.vscode-spring-boot",
+        "vmware.vscode-boot-dev-pack",
+        "vscjava.vscode-spring-initializr",
+        "fwcd.kotlin",
+        "leksandrhavrysh.intellij-formatter",
+        "redhat.vscode-xml",
+        "redhat.vscode-yaml"
+      ]
+    }
+  }
+}

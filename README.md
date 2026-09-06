@@ -1,63 +1,76 @@
 # MVP Gateway
 
-This repository is a reusable baseline template for creating new repositories with consistent governance, security, and collaboration standards.
+MVP Gateway is the API gateway for the MVP platform. It will provide one entry point for client requests and apply shared routing and security rules before forwarding requests to platform services.
 
-## Included Baseline Artifacts
+The project is currently in its **bootstrap milestone**. The Spring Boot application starts and the Spring Cloud Gateway dependencies load, but routes and application-specific security rules are not implemented yet.
 
-- `CODEOWNERS` for default ownership and review routing
-- `SECURITY.md` for vulnerability reporting guidance
-- `CONTRIBUTING.md` for contribution workflow expectations
-- `.github/ISSUE_TEMPLATE/` for standardized bug and feature intake
-- `.github/PULL_REQUEST_TEMPLATE.md` for consistent pull request quality
-- `.github/workflows/` placeholder for project-specific GitHub Actions automation
-- `.gitignore` for local and generated files
+## Current Scope
+
+| Available now | Planned for later work |
+| --- | --- |
+| Runnable Spring Boot application | Routes to downstream services |
+| Reactive Spring Cloud Gateway foundation | Authentication and authorization policy |
+| Actuator and security dependencies | Rate limiting, retries, and CORS policy |
+| Gradle build, tests, formatting, and Checkstyle | Production deployment and operations |
+| Reproducible Dev Container | Additional gateway behavior |
+
+## Technology
+
+- Java 25
+- Spring Boot 4.1
+- Spring Cloud Gateway with WebFlux
+- Gradle Wrapper
+- Spring Java Format and Checkstyle
+
+## Getting Started
+
+New contributors should follow the self-contained [Getting Started Guide](.doc/getting-started/getting-started.md). It covers installation, cloning, Dev Container setup in VS Code and IntelliJ IDEA, project validation, and application startup.
+
+No previous Java, Gradle, Spring, Docker, or Dev Container experience is required.
+
+## Important to Know
+
+- Use the Dev Container for the supported development environment.
+- In VS Code, prefer the Gradle view. Outside VS Code, use the checked-in Gradle Wrapper.
+- Run the Gradle `check` task before opening a pull request.
+- The application listens on port `8080` when running.
+- `bootRun` remains active while the server runs; a percentage such as `80% EXECUTING` is normal.
+- No gateway routes are available during the bootstrap milestone.
+- GitHub Actions workflows have not been implemented yet.
+
+## Development Workflow
+
+VS Code contributors should run tasks from the **Gradle for Java** extension. Contributors using another editor or a terminal should use `./gradlew`. Both methods use the checked-in Gradle version.
+
+See [Gradle Workflows](.doc/development/gradle-workflows.md) for task locations, equivalent commands, and expected results.
+
+## Documentation
+
+### Contributor Guides
+
+- [Getting Started Guide](.doc/getting-started/getting-started.md)
+- [Contributing Guide](CONTRIBUTING.md)
+
+### Development Reference
+
+- [Gradle Workflows](.doc/development/gradle-workflows.md)
+- [Visual Studio Code Workflows](.doc/development/vscode-workflows.md)
+- [IntelliJ IDEA Workflows](.doc/development/intellij-workflows.md)
+- [Code Style and Formatting](.doc/development/code-style.md)
+- [Dev Container Configuration](.doc/reference/dev-container-configuration.md)
+- [Visual Studio Code Extensions](.doc/reference/vscode-extensions.md)
+
+The Getting Started Guide links to detailed prerequisite, Dev Container, and application startup help when needed.
 
 ## Ownership
 
-- `@Arid-Nova/developers` owns application and project files by default.
-- `@Arid-Nova/admins` owns governance, security, licensing, and `.github/` files.
+Review ownership is defined in [CODEOWNERS](CODEOWNERS): `@Arid-Nova/developers` owns project files by default, while `@Arid-Nova/admins` owns governance, security, licensing, and `.github/` files.
 
-CODEOWNERS routing becomes enforceable only when repository rulesets or branch
-protection require code-owner approval.
+The repository includes issue and pull request templates. GitHub Actions workflows have not been implemented yet; the workflows directory currently contains only a placeholder.
 
-## Work Tracking
+## Security
 
-Keep issues and pull requests in the repository where the work belongs. The
-Arid-Nova organization project will provide the cross-repository portfolio
-view; items should be linked to that project rather than duplicated.
-
-The future governance repository will provision the organization project,
-standard fields and views, and automation to add and reconcile repository
-issues and pull requests.
-
-## Existing Repositories
-
-This template establishes defaults for new repositories; it does not
-automatically update repositories created before the template. The future
-governance repository will onboard existing repositories separately by:
-
-1. Inventorying and classifying repositories.
-2. Applying non-destructive repository settings and organization policies.
-3. Opening pull requests for shared-file updates instead of overwriting
-   project-specific files.
-4. Enabling required rulesets after required workflows are available.
-5. Supporting documented exemptions and continuously reconciling drift.
-
-## How to Use
-
-1. Create a new repository from this template.
-2. Confirm the repository rulesets and required checks applied by the governance automation.
-3. Select the project stack and add its project-specific build, test, dependency, and GitHub Actions workflow files.
-4. Replace any project-specific links or contact details.
-5. Start development with consistent policies already in place.
-
-This baseline is intentionally language-agnostic. Stack-specific workflows,
-dependency manifests, Dependabot ecosystems, and devcontainer configuration
-should be added by each project rather than assumed by this template.
-
-Every project must use GitHub Actions, but this template intentionally does not
-provide a universal CI/CD workflow. Each project owns the workflows and
-required checks appropriate for its stack.
+Do not report vulnerabilities in public issues. Follow the private reporting process in [SECURITY.md](SECURITY.md).
 
 ## License
 
