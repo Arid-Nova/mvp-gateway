@@ -2,6 +2,8 @@ plugins {
 	java
 	id("org.springframework.boot") version "4.1.1"
 	id("io.spring.dependency-management") version "1.1.7"
+	id("io.spring.javaformat") version "0.0.48"
+	id("checkstyle")
 }
 
 group = "net.aridnova.mvp"
@@ -45,4 +47,8 @@ dependencyManagement {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+checkstyle {
+	toolVersion = "9.3"
 }

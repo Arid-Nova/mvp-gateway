@@ -28,7 +28,9 @@
         "vmware.vscode-boot-dev-pack",
         "vscjava.vscode-spring-initializr",
         "fwcd.kotlin",
-        "leksandrhavrysh.intellij-formatter"
+        "leksandrhavrysh.intellij-formatter",
+        "redhat.vscode-xml",
+        "redhat.vscode-yaml"
       ]
     }
   }
