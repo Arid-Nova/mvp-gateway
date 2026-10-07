@@ -31,6 +31,25 @@ Use the Testing view or the run/debug action beside a test class or method. The 
 
 The Testing view is useful for focused tests. Before opening a pull request, run **verification > check** in the Gradle view because it also runs formatting and Checkstyle checks.
 
+## Format Java
+
+Spring Java Format, invoked through Gradle, is authoritative for Java source:
+
+1. Open the Gradle view.
+2. Expand **MVP Gateway > Tasks > other**.
+3. Run **format** to update all main and test Java source.
+4. Review the resulting changes.
+5. Run **checkFormat** for a formatting-only verification, or run
+   **verification > check** for complete project verification.
+
+The Dev Container configures VS Code to use spaces and four-space indentation, while
+`.editorconfig` supplies the repository's general whitespace rules. These editor settings
+prevent common mistakes but do not replace Spring Java Format.
+
+Do not rely on **Format Document**, format-on-save, or another Java formatter as the final
+formatting step. If VS Code produces output that differs from Gradle, keep the output from the
+Gradle **format** task.
+
 ## Refresh Project Configuration
 
 Gradle build changes are imported automatically. If the classpath or tasks are stale:

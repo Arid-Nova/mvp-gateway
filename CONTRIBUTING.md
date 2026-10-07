@@ -28,9 +28,15 @@ Pull requests should:
 - Explain what changed and why.
 - Include tests for behavior changes.
 - Update documentation when setup, behavior, or usage changes.
+- Apply Spring Java Format with `./gradlew format` after changing Java source.
 - Pass `./gradlew check`.
 - Follow the pull request template.
 - Contain no generated build output, secrets, credentials, or personal configuration.
+
+Spring Java Format is mandatory for every contributor so Java style remains deterministic
+across VS Code, IntelliJ IDEA, and command-line workflows. IDE formatting does not replace the
+repository's Gradle formatter. See [Code Style and Formatting](.doc/development/code-style.md)
+for the required style, rationale, and IDE-specific workflows.
 
 Do not document routes, security policies, or operational behavior until they are implemented.
 

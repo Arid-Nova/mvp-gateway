@@ -40,9 +40,22 @@ Use `./gradlew check` in the container terminal before contributing. It is autho
 
 ## Formatting
 
-IntelliJ honors `.editorconfig` for general whitespace. Spring Java Format is configured by Gradle and is authoritative for Java source. Run `./gradlew format` to apply it and `./gradlew checkFormat` to verify it.
+IntelliJ honors `.editorconfig` for general whitespace. Spring Java Format is configured by
+Gradle and is authoritative for Java source:
 
-Do not reconfigure IntelliJ formatting to replace the Gradle formatter. Differently formatted Java source will be rejected by `checkFormat`.
+1. Open the Gradle tool window.
+2. Expand **Tasks > other**.
+3. Run **format** to update all main and test Java source.
+4. Review the resulting changes.
+5. Run **checkFormat** for a formatting-only verification, or run
+   **verification > check** for complete project verification.
+
+The equivalent terminal commands are `./gradlew format`, `./gradlew checkFormat`, and
+`./gradlew check`.
+
+Do not use IntelliJ's **Reformat Code** action as a replacement for the Gradle formatter, and
+do not reconfigure IntelliJ formatting to override formatter output. Differently formatted
+Java source will be rejected by `checkFormat`.
 
 ## VS Code-Specific Configuration
 
