@@ -6,20 +6,16 @@ The Dev Container requests Java and Spring development extensions under `customi
 
 | Extension ID | Role and use |
 | --- | --- |
-| `redhat.java` | Java completion, diagnostics, navigation, refactoring, import organization, and Gradle import |
-| `vscjava.vscode-java-debug` | Debug `GatewayApplication.main` with breakpoints, stepping, and variable inspection |
-| `vscjava.vscode-java-test` | Run or debug JUnit tests from editor actions or the Testing view |
-| `vscjava.vscode-java-dependency` | Inspect project structure and dependencies; edit managed dependencies in Gradle rather than adding JARs manually |
-| `vscjava.vscode-gradle` | Browse dependencies and run, pin, debug, or stop Gradle tasks |
-| `vmware.vscode-spring-boot` | Spring-aware navigation and completion for Java and `application.properties` |
+| `vscjava.vscode-java-pack` | Bundles Java language support, debugging, testing, Maven, Gradle, and project management extensions |
 | `vmware.vscode-boot-dev-pack` | Bundles Spring Boot Tools, Spring Initializr, Spring Boot Dashboard, and a walkthrough |
-| `vscjava.vscode-spring-initializr` | Generate separate Spring projects; it is not the dependency editor for this Gradle project |
 | `fwcd.kotlin` | Kotlin language tooling; Gradle remains authoritative for Kotlin DSL evaluation |
 | `leksandrhavrysh.intellij-formatter` | Requested IntelliJ-style formatter that may not be available on every platform; it is not authoritative for Java |
 | `redhat.vscode-xml` | Validate, complete, navigate, and format the Checkstyle XML configuration |
 | `redhat.vscode-yaml` | Validate and complete YAML, including future workflow files |
 
-The Spring Boot Extension Pack overlaps with explicitly listed Spring Boot Tools and Spring Initializr. VS Code installs one copy of each; the pack also supplies Spring Boot Dashboard.
+Bundle members are not listed separately in `devcontainer.json`. The Java Extension Pack supplies `redhat.java`, `vscjava.vscode-java-debug`, `vscjava.vscode-java-test`, `vscjava.vscode-maven`, `vscjava.vscode-gradle`, and `vscjava.vscode-java-dependency`. The Spring Boot Extension Pack supplies `vmware.vscode-spring-boot`, `vscjava.vscode-spring-initializr`, and `vscjava.vscode-spring-boot-dashboard`.
+
+The Java pack includes Maven tooling, but this repository uses Gradle. Use the Gradle Wrapper and Gradle view for project tasks.
 
 ## Authoritative Build and Formatting
 

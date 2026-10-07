@@ -1,18 +1,20 @@
 # IntelliJ IDEA Workflows
 
-IntelliJ IDEA Ultimate can use the same `devcontainer.json` as VS Code. The image and Features are shared, while IntelliJ runs its own backend IDE inside the container.
+IntelliJ IDEA Ultimate can use the same `devcontainer.json` as VS Code. Dev Container support requires the bundled **Dev Containers** and **Docker** plugins to be enabled. The image and Features are shared, while IntelliJ runs its own backend IDE inside the container.
 
 ## Open the Dev Container
 
 1. Start Docker.
-2. Open the cloned repository in IntelliJ IDEA Ultimate.
-3. Open `.devcontainer/devcontainer.json`.
-4. Select the Dev Container gutter action.
-5. Choose **Create Dev Container and Mount Sources**.
-6. Select IntelliJ IDEA as the backend.
-7. Monitor creation in the Services tool window.
-8. Select **Connect** when creation finishes.
-9. Import the Gradle project using the wrapper.
+2. Open **Settings > Plugins > Installed** and confirm that **Dev Containers** and **Docker** are enabled.
+3. Restart IntelliJ IDEA if you enabled either plugin.
+4. Open the cloned repository in IntelliJ IDEA Ultimate.
+5. Open `.devcontainer/devcontainer.json`.
+6. Select the Dev Container gutter action.
+7. Choose **Create Dev Container and Mount Sources**.
+8. Select IntelliJ IDEA as the backend.
+9. Monitor creation in the Services tool window.
+10. Select **Connect** when creation finishes.
+11. Import the Gradle project using the wrapper.
 
 See JetBrains' [Dev Container instructions](https://www.jetbrains.com/help/idea/start-dev-container-inside-ide.html) for additional detail.
 

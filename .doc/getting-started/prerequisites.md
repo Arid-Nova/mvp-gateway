@@ -38,21 +38,26 @@ Recommended for new contributors:
 
 1. Install [Visual Studio Code](https://code.visualstudio.com/download).
 2. Open Extensions using `Ctrl+Shift+X` on Windows/Linux or `Shift+Cmd+X` on macOS. You can also select the Extensions icon in the left Activity Bar.
-3. Install [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) by Microsoft.
+3. Search for the exact extension ID `@id:ms-vscode-remote.remote-containers`.
+4. Select [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers), confirm the publisher is **Microsoft**, and select **Install**.
 
 **Expected result:** The extension page shows **Disable** or **Uninstall**.
 
-The Java, Gradle, Spring, XML, YAML, and related workspace extensions are installed inside the container from `devcontainer.json`. Do not install each container extension manually on the host. VS Code may ask you to trust the repository before creating the container.
+The Dev Containers extension must be installed in the local, host copy of VS Code. It adds commands such as **Dev Containers: Reopen in Container**. It is different from the Java, Gradle, Spring, XML, YAML, and related workspace extensions that `devcontainer.json` installs inside the container. Do not install each container extension manually on the host. VS Code may ask you to trust the repository before creating the container.
 
 ## IntelliJ IDEA
 
 1. Install [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/).
 2. Confirm your license includes Dev Container support.
 3. Start IntelliJ IDEA and complete its initial setup.
+4. Open **Settings > Plugins > Installed**.
+5. Confirm that the bundled **Dev Containers** and **Docker** plugins are enabled. Enable them and restart IntelliJ IDEA if necessary.
 
 IntelliJ IDEA Community edition is not supported for this workflow.
 
 IntelliJ runs its backend IDE inside the Dev Container and opens the project through JetBrains Client. The `customizations.vscode` section does not apply to IntelliJ, but the container image and Features do.
+
+**Expected result:** Searching the installed plugins shows **Dev Containers** and **Docker** as enabled.
 
 See [IntelliJ IDEA Workflows](../development/intellij-workflows.md) for connection steps.
 

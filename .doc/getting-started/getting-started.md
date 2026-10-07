@@ -10,7 +10,7 @@ Install:
 - [Docker](https://docs.docker.com/get-started/get-docker/)
 - One supported editor:
   - Recommended: [Visual Studio Code](https://code.visualstudio.com/download) with [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-  - Alternative: [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/)
+  - Alternative: [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/) with its bundled **Dev Containers** and **Docker** plugins enabled
 
 Start Docker. Open a terminal on your computer and run:
 
@@ -40,23 +40,34 @@ Choose the instructions for your editor.
 
 ### Visual Studio Code
 
-1. Open the Command Palette:
+Install the Dev Containers extension in your local VS Code before opening the project in a container:
+
+1. Open Extensions:
+   - Windows/Linux: `Ctrl+Shift+X`
+   - macOS: `Shift+Cmd+X`
+2. Search for `@id:ms-vscode-remote.remote-containers`.
+3. Select **Dev Containers** published by Microsoft and select **Install**.
+4. Confirm its extension page shows **Disable** or **Uninstall**.
+5. Open the Command Palette:
    - Windows/Linux: `Ctrl+Shift+P`
    - macOS: `Shift+Cmd+P`
    - Any platform: `F1` or **View > Command Palette**
-2. Type `Dev Containers: Reopen in Container`.
-3. Select **Dev Containers: Reopen in Container**.
-4. Trust the repository if prompted.
-5. Wait for the container and Gradle import to finish.
+6. Type `Dev Containers: Reopen in Container`.
+7. Select **Dev Containers: Reopen in Container**.
+8. Trust the repository if prompted.
+9. Wait for the container and Gradle import to finish.
+
+This Microsoft extension is installed on your computer and provides the commands that create and connect to the Dev Container. Java, Gradle, and Spring extensions are installed separately inside the container by this repository.
 
 ### IntelliJ IDEA Ultimate
 
-1. Open `.devcontainer/devcontainer.json`.
-2. Select the Dev Container icon in the editor gutter.
-3. Choose **Create Dev Container and Mount Sources**.
-4. Select IntelliJ IDEA as the backend.
-5. Wait for creation to finish, then select **Connect**.
-6. Wait for Gradle import and indexing to finish.
+1. Open **Settings > Plugins > Installed** and confirm that **Dev Containers** and **Docker** are enabled. Restart IntelliJ IDEA if you enable either plugin.
+2. Open `.devcontainer/devcontainer.json`.
+3. Select the Dev Container icon in the editor gutter.
+4. Choose **Create Dev Container and Mount Sources**.
+5. Select IntelliJ IDEA as the backend.
+6. Wait for creation to finish, then select **Connect**.
+7. Wait for Gradle import and indexing to finish.
 
 ## 4. Check the Development Environment
 

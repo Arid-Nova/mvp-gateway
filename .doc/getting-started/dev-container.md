@@ -2,7 +2,27 @@
 
 Complete [Prerequisites](prerequisites.md) first. Run validation commands in an editor terminal after connecting to the container.
 
+## What Is a Dev Container?
+
+A Dev Container is a Docker container configured as a complete development environment. The repository's `.devcontainer/devcontainer.json` file tells a supported editor which container image, tools, settings, and editor extensions to use.
+
+When connected, the editor interface still runs on your computer, but the project terminal, Java language tooling, Gradle tasks, tests, and application run inside the container. The repository is mounted into the container, so source changes are saved in the same working tree on your computer.
+
+## Why This Project Uses One
+
+The Dev Container provides every contributor with the supported Java 25 environment and the same development tooling without requiring a local Java or Gradle installation. This:
+
+- reduces setup differences between operating systems;
+- keeps Java, Gradle, and supporting tools consistent across contributors;
+- avoids changing a contributor's system-wide development configuration;
+- makes setup and troubleshooting reproducible; and
+- keeps the editor and terminal workflows aligned with the environment used to verify the project.
+
+Docker and the editor's Dev Container extension or plugin are still required on the host. The container is a development environment, not the project's production deployment image.
+
 ## Visual Studio Code
+
+The Microsoft **Dev Containers** extension must be installed in your local VS Code before these steps. Open Extensions, search for `@id:ms-vscode-remote.remote-containers`, and install it if its page does not show **Disable** or **Uninstall**.
 
 1. Start Docker.
 2. Open the `mvp-gateway` folder in VS Code.
@@ -39,14 +59,16 @@ Terminals opened after connection run inside the container. Source changes remai
 ## IntelliJ IDEA
 
 1. Start Docker.
-2. Open the `mvp-gateway` folder in IntelliJ IDEA Ultimate.
-3. Open `.devcontainer/devcontainer.json`.
-4. Select the Dev Container gutter icon.
-5. Choose **Create Dev Container and Mount Sources**.
-6. Select IntelliJ IDEA as the backend.
-7. Wait for creation and select **Connect**.
-8. Wait for Gradle import and indexing.
-9. Open the terminal and run the validation commands above.
+2. Open **Settings > Plugins > Installed** and confirm that the bundled **Dev Containers** and **Docker** plugins are enabled.
+3. Restart IntelliJ IDEA if you enabled either plugin.
+4. Open the `mvp-gateway` folder in IntelliJ IDEA Ultimate.
+5. Open `.devcontainer/devcontainer.json`.
+6. Select the Dev Container gutter icon.
+7. Choose **Create Dev Container and Mount Sources**.
+8. Select IntelliJ IDEA as the backend.
+9. Wait for creation and select **Connect**.
+10. Wait for Gradle import and indexing.
+11. Open the terminal and run the validation commands above.
 
 JetBrains documents this workflow in [Start Dev Container inside IDE](https://www.jetbrains.com/help/idea/start-dev-container-inside-ide.html).
 
@@ -96,7 +118,8 @@ The application listens on port `8080` inside the container. The current configu
 
 | Symptom | Check | Action |
 | --- | --- | --- |
-| **Reopen in Container** is missing in VS Code | Open Extensions and find Dev Containers | Install or enable the Microsoft Dev Containers extension. |
+| **Reopen in Container** is missing in VS Code | Open Extensions and search for `@id:ms-vscode-remote.remote-containers` | Install or enable **Dev Containers** by Microsoft in the local VS Code instance. |
+| The Dev Container gutter icon is missing in IntelliJ IDEA | Open **Settings > Plugins > Installed** | Enable the bundled Dev Containers and Docker plugins, then restart IntelliJ IDEA. |
 | Container creation fails immediately | Run the Docker verification command from [Prerequisites](prerequisites.md) | Start Docker and confirm Client and Server sections appear. |
 | Workspace path does not start with `/workspaces/` | Check the editor's remote indicator | Reopen or reconnect to the Dev Container. |
 | Java is not version 25 | Run the validation commands above | Rebuild the container; the expected Java home is `/usr/lib/jvm/msopenjdk-current`. |
